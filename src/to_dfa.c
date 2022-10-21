@@ -524,20 +524,4 @@ void printDFA(DFA *dfa, int n, FILE *fptr)
     }
     fprintf(fptr, "\n");
   }
-  // for (int row = numberOfStates - 1; row >= 0; row--)
-  // {
-  //   for (int column = 0; column < numberOfStates; column++)
-  //   {
-  //     fprintf(fptr, "%d ", arr[row + 1][column]);
-  //   }
-  //   fprintf(fptr, "\n");
-  // }
-  // for (int row = numberOfStates - 1; row >= 0; row--)
-  // {
-  //   for (int column = 0; column < numberOfStates; column++)
-  //   {
-  //     fprintf(fptr, "%d ", arr[row + 1 + numberOfStates][column]);
-  //   }
-  //   fprintf(fptr, "\n");
-  // }
 }

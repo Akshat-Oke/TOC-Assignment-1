@@ -150,7 +150,7 @@ void *runMachine(void *arg)
 }
 int run_thread(int gridSize, char *sourceStr)
 {
-  fptr = fopen("output.txt", "w");
+  fptr = fopen("2020A7PS0284_t1.txt", "w");
   initFile(fptr);
   source = new_string(sourceStr);
   n = gridSize;

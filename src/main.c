@@ -19,7 +19,7 @@ int main()
   Input input;
   getInput(&input);
   DFA *dfa = convertToDFA(2);
-  FILE *fptr = fopen("output2.txt", "w");
+  FILE *fptr = fopen("2020A7PS0284H_t2.txt", "w");
   printDFADirect(dfa, 2, fptr);
   int status = run_thread(input.n, input.string);
   return 0;
