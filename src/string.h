@@ -3,7 +3,7 @@
 #include <stdio.h>
 // create string
 // char *new_string(int size);
-void initFile(FILE *f);
+void initStringFile(FILE *f);
 char *new_string(const char *string);
 void append(char *string, char ch);
 void append_and_print(char *string, char ch, const char *prefix);

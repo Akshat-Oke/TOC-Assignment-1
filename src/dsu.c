@@ -10,8 +10,7 @@ void init_dsu(int numberOfNodes)
     parent[i] = i;
   }
 }
-/// @deprecated Not required: Use
-/// init_dsu instead
+/// @deprecated Not required: Use `init_dsu` instead
 /// @param v Node
 void make_set(int v)
 {

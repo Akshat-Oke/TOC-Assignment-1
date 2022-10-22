@@ -130,19 +130,19 @@ int *setFlatten(Set *s)
 }
 void setPrintAll(Set *s)
 {
-  for (int i = 0; i < s->length; i++)
-  {
-    printf("(%d %d), ", s->data[i]->e1, s->data[i]->e2);
-  }
-  printf("\n");
+  // for (int i = 0; i < s->length; i++)
+  // {
+  //   printf("(%d %d), ", s->data[i]->e1, s->data[i]->e2);
+  // }
+  // printf("\n");
 }
 void setPrintAllAsOne(Set *set)
 {
-  for (int i = 0; i < set->length; i++)
-  {
-    printf("%d ", set->data[i]->e1);
-  }
-  printf("\n");
+  // for (int i = 0; i < set->length; i++)
+  // {
+  //   printf("%d ", set->data[i]->e1);
+  // }
+  // printf("\n");
 }
 void setDestroy(Set *array)
 {

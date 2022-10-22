@@ -1,5 +1,6 @@
 #ifndef toc_nfa
 #define toc_nfa
+#include <stdio.h>
 
 // The state of an FA
 // 0, 1, 2... n-1
@@ -11,7 +12,7 @@ typedef short int state;
 typedef short int alphabet;
 
 int run(int n, char *source);
-int run_thread(int n, char *source);
+int run_thread(int n, char *source, FILE *fptr);
 int transitions(int n, state current, char input, state nextStates[]);
 // void convertToDfaAndPrint(int n);
 #endif

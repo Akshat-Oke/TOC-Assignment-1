@@ -13,7 +13,7 @@ bool early_terminate = true;
 /// Output file pointer
 FILE *fptr;
 
-/// Current snapshot of the NFA
+///[8] Current snapshot of the NFA
 typedef struct NFA
 {
   state current;
@@ -87,10 +87,14 @@ void *runMachine(void *arg)
   NFA *nfa = (NFA *)arg;
   state current = nfa->current;
   int i = nfa->i;
+  //[10] Append the current state to the
+  // traversed path and print it.
   append_and_print(nfa->path, current + '0', "Exploring Path:");
-  // Check if input string is over
+  //[11] Check if input string is over
   if (nfa->i >= length)
   {
+    //[12] If we reach the top right state, accept if input
+    // is exhausted
     if (current == (n + 1) * (n + 1) - 1)
     {
       printf("Accepted.\n");
@@ -99,17 +103,19 @@ void *runMachine(void *arg)
         exit(0); // terminate all threads (program)
       return NULL;
     }
-    // Failed as not in final state
+    //[13] Failed as not in final state
     print_with_spaces(nfa->path, "Failed at path:");
     return NULL;
   }
-  // Continue with input
+  //[14] Continue with input
   char input = source[nfa->i];
   state nextStates[2];
+  //[15] Find the next states
+  // This is the transition function δ
   int num = transitions(n, current, input, nextStates);
   if (num == 1)
   {
-    // if only 1 transition is possible, continue
+    //[16] if only 1 transition is possible, continue
     // the same thread
     nfa->current = nextStates[0];
     nfa->i++;
@@ -117,9 +123,8 @@ void *runMachine(void *arg)
   }
   else if (num == 2)
   {
-    // create new threads for both transitions.
+    //[17] create new threads for both transitions.
     // this thread will terminate.
-    // NFA *nfa1 = (NFA *)malloc(sizeof(NFA));
     NFA *nfa1 = nfa;
     nfa1->current = nextStates[0];
     nfa1->i = i + 1;
@@ -130,11 +135,11 @@ void *runMachine(void *arg)
     // We cannot use nfa1->path = nfa->path
     // because it will be reused by the other thread
     nfa2->path = new_string(nfa->path);
-    // Create the threads
+    //[18] Create the threads
     pthread_t thread1, thread2;
     pthread_create(&thread1, NULL, runMachine, (void *)nfa1);
     pthread_create(&thread2, NULL, runMachine, (void *)nfa2);
-    // Wait for both
+    //[19] Wait for both
     int r1 = pthread_join(thread1, NULL);
     int r2 = pthread_join(thread2, NULL);
     if (r1 || r2)
@@ -148,19 +153,23 @@ void *runMachine(void *arg)
   }
   return NULL;
 }
-int run_thread(int gridSize, char *sourceStr)
+//[6] Starts off the NFA
+int run_thread(int gridSize, char *sourceStr, FILE *fptr)
 {
-  fptr = fopen("2020A7PS0284_t1.txt", "w");
-  initFile(fptr);
+  // Just a string library initialization function
+  initStringFile(fptr);
+  // Copy the string to the heap
   source = new_string(sourceStr);
   n = gridSize;
   length = strlen(source);
   // First thread will have starting state
-  pthread_t tid;
+  //[7] Create the NFA struct object
   NFA *nfa = (NFA *)malloc(sizeof(NFA));
   nfa->current = 0;
   nfa->i = 0;
-  nfa->path = new_string(""); //(char *)malloc(sizeof(char) * (length + 1));
+  nfa->path = new_string("");
+  pthread_t tid;
+  //[9] Start off the thread
   int result = pthread_create(&tid, NULL, runMachine, (void *)(nfa));
   if (result)
   {
