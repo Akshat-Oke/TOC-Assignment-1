@@ -1,10 +1,10 @@
 /*
  * |___________________________________|
- * |   .    .    .     .     .   .   . |
+ * |.  .    .    .     .     .   .   . |
  * |  .   .   Welcome to the  .    .   |
- * |     .   TOC Assignment 1 . .      |
+ * |     .   TOC Assignment 1 . .    . |
  * |   .    .   Rainforest .   .  .    |
- * | .    .   .    .     .   .         |
+ * | .    .   .    .     .   .  .   .  |
  * |. A .lot of things lurk under the  |
  * | . . surface.of this forest.  .    |
  * |.  .Be careful, because things   . |
@@ -14,10 +14,15 @@
  * | .  follow the helpful signs .  . .|
  * |.  . and you will be fine. . . .  .|
  * |.  . .  .   . .   .  . .    . .  . |
- * | .|| Signs are enclosed in [] ||.  |
+ * |..|| Signs are enclosed in [] ||.  |
+ * |. || The map is in README.md .||. .|
  * | .  .  .    .    .   .     .  .  . |
  * |___________________________________|
  *
+ * Approximately 1600 lines of code (including comments)
+ * with a variety of function species roam here.
+ * It is best to be vigilant for rogue entities and
+ * read the README.md for additional running instructions.
  */
 
 #include <stdio.h>
@@ -62,6 +67,16 @@ int main(int argc, char *argv[])
   }
   else
   {
+    // Task 2
+    // [21] Convert the NFA to DFA
+    // Pitfall: Because the DFA union states are
+    // represented as 128-bit unsigned integers
+    // using bit masking, there can only be a maximum of
+    // 127 states in the source NFA.
+    // Hence, the corresponding grid size cannot be greater than 10:
+    // n <= sqrt(127) - 1 = 11.28 - 1 = 10.28
+    // => n <= 10
+    // Consequently, this function throws an error if n > 10
     DFA *dfa = convertToDFA(input.n);
 
     FILE *fptr = fopen("2020A7PS0284H_t2.txt", "w");

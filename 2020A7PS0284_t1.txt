@@ -2,113 +2,113 @@ Exploring Path: 0
 Exploring Path: 0 12 
 Exploring Path: 0 12 13 
 Exploring Path: 0 12 13 25 
-Exploring Path: 0 12 13 25 24 
-Exploring Path: 0 12 13 25 24 25 
+Exploring Path: 0 12 13 1 
+Exploring Path: 0 12 13 1 2 
 Exploring Path: 0 12 13 25 26 
 Exploring Path: 0 12 13 25 26 27 
-Exploring Path: 0 12 13 25 24 25 13 
-Exploring Path: 0 12 13 25 24 25 37 
-Exploring Path: 0 12 13 25 24 25 13 25 
-Exploring Path: 0 12 13 25 26 25 
-Exploring Path: 0 12 13 25 26 27 15 
-Exploring Path: 0 12 13 25 24 25 37 49 
-Exploring Path: 0 12 13 1 
-Exploring Path: 0 12 13 25 26 25 13 
-Exploring Path: 0 12 13 25 26 27 15 27 
-Exploring Path: 0 12 13 1 2 
 Exploring Path: 0 12 13 1 0 
 Exploring Path: 0 12 13 1 0 1 
 Exploring Path: 0 12 13 1 0 1 13 
-Exploring Path: 0 12 13 25 26 25 13 25 
+Exploring Path: 0 12 13 25 24 
+Exploring Path: 0 12 13 25 24 25 
 Exploring Path: 0 12 13 25 26 27 39 
-Exploring Path: 0 12 13 25 24 25 37 25 
-Exploring Path: 0 12 13 25 24 25 13 25 26 
-Failed at path: 0 12 13 25 24 25 13 25 26 
-Exploring Path: 0 12 13 25 24 25 37 49 50 
-Failed at path: 0 12 13 25 24 25 37 49 50 
-Exploring Path: 0 12 13 25 26 27 15 3 
-Exploring Path: 0 12 13 25 24 25 37 49 48 
-Failed at path: 0 12 13 25 24 25 37 49 48 
-Exploring Path: 0 12 13 25 24 25 37 25 24 
-Failed at path: 0 12 13 25 24 25 37 25 24 
-Exploring Path: 0 12 13 25 24 25 37 25 26 
-Failed at path: 0 12 13 25 24 25 37 25 26 
-Exploring Path: 0 12 13 25 26 27 39 27 
-Exploring Path: 0 12 13 25 26 27 39 51 
-Exploring Path: 0 12 13 25 26 25 37 
-Exploring Path: 0 12 13 1 0 1 13 1 
-Exploring Path: 0 12 13 25 26 25 37 49 
+Exploring Path: 0 12 13 1 2 1 
+Exploring Path: 0 12 13 1 2 1 13 
 Exploring Path: 0 12 13 1 2 3 
 Exploring Path: 0 12 13 1 2 3 15 
+Exploring Path: 0 12 13 1 2 1 13 25 
+Exploring Path: 0 12 13 1 2 1 13 1 
+Exploring Path: 0 12 13 1 2 1 13 25 26 
+Failed at path: 0 12 13 1 2 1 13 25 26 
+Exploring Path: 0 12 13 1 0 1 13 1 
+Exploring Path: 0 12 13 1 0 1 13 1 2 
+Failed at path: 0 12 13 1 0 1 13 1 2 
+Exploring Path: 0 12 13 25 24 25 37 
+Exploring Path: 0 12 13 25 24 25 37 49 
+Exploring Path: 0 12 13 25 24 25 37 49 48 
+Failed at path: 0 12 13 25 24 25 37 49 48 
+Exploring Path: 0 12 13 25 26 25 
+Exploring Path: 0 12 13 25 26 27 39 51 
+Exploring Path: 0 12 13 25 24 25 13 
+Exploring Path: 0 12 13 25 24 25 37 25 
+Exploring Path: 0 12 13 25 24 25 37 49 50 
+Failed at path: 0 12 13 25 24 25 37 49 50 
 Exploring Path: 0 12 13 1 0 1 13 25 
-Exploring Path: 0 12 13 25 24 25 13 1 
-Exploring Path: 0 12 13 25 26 27 15 27 28 
-Failed at path: 0 12 13 25 26 27 15 27 28 
-Exploring Path: 0 12 13 25 24 25 13 25 24 
-Failed at path: 0 12 13 25 24 25 13 25 24 
-Exploring Path: 0 12 13 25 26 25 13 25 26 
-Failed at path: 0 12 13 25 26 25 13 25 26 
-Exploring Path: 0 12 13 25 26 25 37 49 50 
-Failed at path: 0 12 13 25 26 25 37 49 50 
-Exploring Path: 0 12 13 25 26 27 15 27 26 
-Failed at path: 0 12 13 25 26 27 15 27 26 
-Exploring Path: 0 12 13 25 26 25 37 25 
-Exploring Path: 0 12 13 25 26 27 15 3 4 
-Failed at path: 0 12 13 25 26 27 15 3 4 
-Exploring Path: 0 12 13 25 26 27 15 3 2 
-Failed at path: 0 12 13 25 26 27 15 3 2 
-Exploring Path: 0 12 13 25 26 25 13 1 
-Exploring Path: 0 12 13 25 26 25 13 1 2 
-Failed at path: 0 12 13 25 26 25 13 1 2 
-Exploring Path: 0 12 13 25 26 27 39 27 28 
-Exploring Path: 0 12 13 1 0 1 13 25 26 
-Failed at path: 0 12 13 1 0 1 13 25 26 
-Exploring Path: 0 12 13 25 26 27 39 27 26 
-Failed at path: 0 12 13 25 26 27 39 27 26 
-Failed at path: 0 12 13 25 26 27 39 27 28 
-Exploring Path: 0 12 13 1 2 3 15 27 
+Exploring Path: 0 12 13 1 2 1 13 25 24 
+Failed at path: 0 12 13 1 2 1 13 25 24 
 Exploring Path: 0 12 13 1 0 1 13 1 0 
 Failed at path: 0 12 13 1 0 1 13 1 0 
-Exploring Path: 0 12 13 25 24 25 13 1 2 
-Failed at path: 0 12 13 25 24 25 13 1 2 
-Exploring Path: 0 12 13 25 24 25 13 1 0 
-Failed at path: 0 12 13 25 24 25 13 1 0 
+Exploring Path: 0 12 13 1 2 1 13 1 2 
+Failed at path: 0 12 13 1 2 1 13 1 2 
+Exploring Path: 0 12 13 1 0 1 13 25 26 
+Failed at path: 0 12 13 1 0 1 13 25 26 
+Exploring Path: 0 12 13 1 2 1 13 1 0 
+Failed at path: 0 12 13 1 2 1 13 1 0 
+Exploring Path: 0 12 13 25 26 27 39 51 50 
+Exploring Path: 0 12 13 1 0 1 13 25 24 
+Failed at path: 0 12 13 25 26 27 39 51 50 
+Failed at path: 0 12 13 1 0 1 13 25 24 
+Exploring Path: 0 12 13 25 24 25 37 25 26 
+Failed at path: 0 12 13 25 24 25 37 25 26 
+Exploring Path: 0 12 13 1 2 3 15 27 
+Exploring Path: 0 12 13 25 26 27 39 27 
+Exploring Path: 0 12 13 25 24 25 13 25 
+Exploring Path: 0 12 13 25 24 25 37 25 24 
+Failed at path: 0 12 13 25 24 25 37 25 24 
 Exploring Path: 0 12 13 25 26 27 39 51 52 
 Failed at path: 0 12 13 25 26 27 39 51 52 
 Exploring Path: 0 12 13 1 2 3 15 27 28 
 Failed at path: 0 12 13 1 2 3 15 27 28 
-Exploring Path: 0 12 13 1 0 1 13 25 24 
-Failed at path: 0 12 13 1 0 1 13 25 24 
+Exploring Path: 0 12 13 25 24 25 13 25 24 
+Failed at path: 0 12 13 25 24 25 13 25 24 
+Exploring Path: 0 12 13 25 26 27 15 
+Exploring Path: 0 12 13 25 24 25 13 25 26 
+Failed at path: 0 12 13 25 24 25 13 25 26 
+Exploring Path: 0 12 13 25 26 27 15 3 
+Exploring Path: 0 12 13 25 26 27 15 3 4 
+Exploring Path: 0 12 13 1 2 3 15 27 26 
+Failed at path: 0 12 13 25 26 27 15 3 4 
+Failed at path: 0 12 13 1 2 3 15 27 26 
+Exploring Path: 0 12 13 25 26 27 15 27 
+Exploring Path: 0 12 13 25 26 27 39 27 28 
+Failed at path: 0 12 13 25 26 27 39 27 28 
+Exploring Path: 0 12 13 25 26 25 13 
+Exploring Path: 0 12 13 1 2 3 15 3 
+Exploring Path: 0 12 13 25 26 25 13 1 
+Exploring Path: 0 12 13 25 26 27 15 27 28 
+Exploring Path: 0 12 13 25 24 25 13 1 
+Failed at path: 0 12 13 25 26 27 15 27 28 
+Exploring Path: 0 12 13 25 26 27 39 27 26 
+Failed at path: 0 12 13 25 26 27 39 27 26 
+Exploring Path: 0 12 13 25 26 25 13 25 
+Exploring Path: 0 12 13 25 24 25 13 1 0 
+Failed at path: 0 12 13 25 24 25 13 1 0 
+Exploring Path: 0 12 13 25 26 27 15 3 2 
+Failed at path: 0 12 13 25 26 27 15 3 2 
+Exploring Path: 0 12 13 25 26 25 13 25 26 
+Exploring Path: 0 12 13 25 26 25 13 1 0 
+Failed at path: 0 12 13 25 26 25 13 1 0 
+Failed at path: 0 12 13 25 26 25 13 25 26 
+Exploring Path: 0 12 13 25 24 25 13 1 2 
+Failed at path: 0 12 13 25 24 25 13 1 2 
+Exploring Path: 0 12 13 1 2 3 15 3 4 
+Failed at path: 0 12 13 1 2 3 15 3 4 
+Exploring Path: 0 12 13 25 26 25 13 25 24 
+Failed at path: 0 12 13 25 26 25 13 25 24 
+Exploring Path: 0 12 13 25 26 25 13 1 2 
+Failed at path: 0 12 13 25 26 25 13 1 2 
+Exploring Path: 0 12 13 1 2 3 15 3 2 
+Failed at path: 0 12 13 1 2 3 15 3 2 
+Exploring Path: 0 12 13 25 26 27 15 27 26 
+Failed at path: 0 12 13 25 26 27 15 27 26 
+Exploring Path: 0 12 13 25 26 25 37 
+Exploring Path: 0 12 13 25 26 25 37 49 
+Exploring Path: 0 12 13 25 26 25 37 25 
+Exploring Path: 0 12 13 25 26 25 37 49 48 
+Failed at path: 0 12 13 25 26 25 37 49 48 
 Exploring Path: 0 12 13 25 26 25 37 25 26 
 Failed at path: 0 12 13 25 26 25 37 25 26 
 Exploring Path: 0 12 13 25 26 25 37 25 24 
 Failed at path: 0 12 13 25 26 25 37 25 24 
-Exploring Path: 0 12 13 25 26 25 13 1 0 
-Failed at path: 0 12 13 25 26 25 13 1 0 
-Exploring Path: 0 12 13 25 26 25 13 25 24 
-Failed at path: 0 12 13 25 26 25 13 25 24 
-Exploring Path: 0 12 13 25 26 27 39 51 50 
-Failed at path: 0 12 13 25 26 27 39 51 50 
-Exploring Path: 0 12 13 1 2 3 15 27 26 
-Failed at path: 0 12 13 1 2 3 15 27 26 
-Exploring Path: 0 12 13 25 26 25 37 49 48 
-Exploring Path: 0 12 13 1 2 3 15 3 
-Failed at path: 0 12 13 25 26 25 37 49 48 
-Exploring Path: 0 12 13 1 2 3 15 3 2 
-Failed at path: 0 12 13 1 2 3 15 3 2 
-Exploring Path: 0 12 13 1 2 3 15 3 4 
-Failed at path: 0 12 13 1 2 3 15 3 4 
-Exploring Path: 0 12 13 1 2 1 
-Exploring Path: 0 12 13 1 2 1 13 
-Exploring Path: 0 12 13 1 2 1 13 25 
-Exploring Path: 0 12 13 1 0 1 13 1 2 
-Failed at path: 0 12 13 1 0 1 13 1 2 
-Exploring Path: 0 12 13 1 2 1 13 25 24 
-Failed at path: 0 12 13 1 2 1 13 25 24 
-Exploring Path: 0 12 13 1 2 1 13 1 
-Exploring Path: 0 12 13 1 2 1 13 1 2 
-Failed at path: 0 12 13 1 2 1 13 1 2 
-Exploring Path: 0 12 13 1 2 1 13 25 26 
-Failed at path: 0 12 13 1 2 1 13 25 26 
-Exploring Path: 0 12 13 1 2 1 13 1 0 
-Failed at path: 0 12 13 1 2 1 13 1 0 
+Exploring Path: 0 12 13 25 26 25 37 49 50 
+Failed at path: 0 12 13 25 26 25 37 49 50 
