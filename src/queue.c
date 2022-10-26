@@ -13,7 +13,7 @@ Queue *createQueue()
   q->tail = NULL;
   return q;
 }
-void enqueue(Queue *q, int e)
+void enqueue(Queue *q, union_state e)
 {
   Node *n = malloc(sizeof(Node));
   n->data = e;
@@ -30,7 +30,7 @@ void enqueue(Queue *q, int e)
   }
   q->size++;
 }
-int dequeue(Queue *q)
+union_state dequeue(Queue *q)
 {
   if (q->head == NULL)
   {
@@ -40,7 +40,7 @@ int dequeue(Queue *q)
   Node *n = q->head;
   q->head = n->next;
   q->size--;
-  int e = n->data;
+  union_state e = n->data;
   free(n);
   if (q->head == NULL)
     q->tail = NULL;

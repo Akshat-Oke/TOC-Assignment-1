@@ -1,18 +1,20 @@
 #ifndef toc_to_dfa
 #define toc_to_dfa
 #include <stdio.h>
+#include <stdint.h>
 #include "nfa.h"
+#include "uint128.h"
 
 typedef struct Transition
 {
   struct Transition *next;
   // Will always be 2
-  //  for '0' and '1'
+  // for '0' and '1'
   // int numInputs;
   // Initial state
-  int from;
+  union_state from;
   // Final states for every input
-  int to;
+  union_state to;
   /*Example:
   numInputs: 2
   from: 0
@@ -26,10 +28,10 @@ typedef struct
 {
   // The number of rows in transitionFunc
   int numberOfStates;
-  int *states;
-  int startState;
+  union_state *states;
+  union_state startState;
   int numberOfFinalStates;
-  int *finalStates;
+  union_state *finalStates;
   // Always 2, for '0', '1'
   int numInputs;
   // All transitions in this DFA
@@ -42,7 +44,7 @@ typedef struct
 /// @brief Converts given NFA to DFA
 /// @param n The grid size
 DFA *convertToDFA(int n);
-void addTransition(DFA *dfa, int from, int input, int to);
+void addTransition(DFA *dfa, union_state from, int input, union_state to);
 int **convertToArray(DFA *dfa);
 void printDFA(DFA *dfa, int n, FILE *fptr);
 void printDFADirect(DFA *dfa, int n, FILE *fptr);

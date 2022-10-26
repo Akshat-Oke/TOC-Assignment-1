@@ -1,6 +1,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <string.h>
 #include <stdbool.h>
 
@@ -9,40 +10,48 @@
 #include "queue.h"
 #include "set.h"
 #include "to_dfa.h"
-int getIndexOf(int state, int *states, int numberOfStates);
+#include "uint128.h"
+int getIndexOf(union_state state, union_state *states, int numberOfStates);
 
-// static void printArray(int *arr, int size)
-// {
-//   for (int i = 0; i < size; i++)
-//   {
-//     printf("%d ", arr[i]);
-//   }
-//   printf("\n");
-// }
+static void printArray(union_state *arr, int size)
+{
+  for (int i = 0; i < size; i++)
+  {
+    // printf("%d ", arr[i]);
+    print_uint128_no_line(arr[i]);
+    printf(" ");
+  }
+  printf("\n");
+}
 
-// static void printTransitions(Transition *head, int input)
-// {
-//   while (head != NULL)
-//   {
-//     // printf("%d\n", head != NULL);
-//     printf("(%d, '%d')->%d\n", head->from, input, head->to);
-//     head = head->next;
-//   }
-// }
-// static void debugPrintDFA(DFA *dfa)
-// {
-//   printf("States:\n");
-//   printArray(dfa->states, dfa->numberOfStates);
-//   printf("Final states:\n");
-//   printArray(dfa->finalStates, dfa->numberOfFinalStates);
-//   printf("Starting state: %d\n", dfa->startState);
-//   printf("Transitions:\n");
-//   for (int i = 0; i < dfa->numInputs; i++)
-//   {
-//     printTransitions(dfa->transitionLists[i], i);
-//   }
-// }
-void addTransition(DFA *dfa, int from, int input, int to)
+static void printTransitions(Transition *head, int input)
+{
+  while (head != NULL)
+  {
+    // printf("%d\n", head != NULL);
+    // printf("(%d, '%d')->%d\n", head->from, input, head->to);
+    printf("(");
+    print_uint128_no_line(head->from);
+    printf(", '%d')->", input);
+    print_uint128_no_line(head->to);
+    printf("\n");
+    head = head->next;
+  }
+}
+static void debugPrintDFA(DFA *dfa)
+{
+  printf("=====Printing DFA=====\nStates:\n");
+  printArray(dfa->states, dfa->numberOfStates);
+  printf("Final states:\n");
+  printArray(dfa->finalStates, dfa->numberOfFinalStates);
+  printf("Starting state: %d\n", dfa->startState);
+  printf("Transitions:\n");
+  for (int i = 0; i < dfa->numInputs; i++)
+  {
+    printTransitions(dfa->transitionLists[i], i);
+  }
+}
+void addTransition(DFA *dfa, union_state from, int input, union_state to)
 {
   Transition *new = malloc(sizeof(Transition));
   // Transition *head = dfa->transitionLists[input];
@@ -53,14 +62,15 @@ void addTransition(DFA *dfa, int from, int input, int to)
   dfa->numberOfStates++;
 }
 
-static bool unionContainsFinal(int unionState, int finalState)
+static bool unionContainsFinal(union_state unionState, int finalState)
 {
   return (unionState >> finalState) == 1;
 }
 
-static int getUnionStateOne(state s)
+static union_state getUnionStateOne(state s)
 {
-  return 1 << s;
+  union_state us = s;
+  return 1 << us;
 }
 // static int *flattenLinkedList(Transition *head)
 // {
@@ -118,11 +128,11 @@ static void copyListToSet(Transition *head, Set *set)
 /// @param n Grid size
 /// @param currentSet Current union state set
 /// @param input Input, '0' or '1'
-int setTransition(int n, int currentSet, char input)
+union_state setTransition(int n, union_state currentSet, char input)
 {
   state nextStates[2];
   // get exponents of 2 from currentSet
-  int dfaUnion = 0;
+  union_state dfaUnion = 0;
   if (currentSet == 0)
   {
     fprintf(stderr, "Invalid state set: 0\n");
@@ -139,7 +149,7 @@ int setTransition(int n, int currentSet, char input)
       int num = transitions(n, actualState, input, nextStates);
       for (int i = 0; i < num; i++)
       {
-        dfaUnion |= (1 << nextStates[i]);
+        dfaUnion |= ((union_state)1 << (union_state)nextStates[i]);
       }
     }
     actualState++;
@@ -171,10 +181,10 @@ static DFA *justConvertNFAtoDFA(int n)
   setInsertOne(s, getUnionStateOne(0));
   while (queueNotEmpty(q))
   {
-    int state = dequeue(q);
+    union_state state = dequeue(q);
     for (int input = 0; input <= 1; input++)
     {
-      int dfaUnionState = setTransition(n, state, input + '0');
+      union_state dfaUnionState = setTransition(n, state, input + '0');
       addTransition(dfa, state, input, dfaUnionState);
       if (!setHasOne(s, dfaUnionState))
       {
@@ -226,14 +236,15 @@ static int getTransition(const DFA *dfa, int from, int input)
     }
     temp = temp->next;
   }
+  fprintf(stderr, "No transition found from %d on '%d'", from, input);
   return -1;
 }
 DFA *minimizeDFA(const DFA *dfa)
 {
   int numberOfStates = dfa->numberOfStates;
   // reverse(dfa->states, numberOfStates);
-  // printf("State %d index is %d\n", dfa->states[0], getIndexOf(dfa->states[0], dfa->states, numberOfStates));
-  // printf("Starting state: %d\n", dfa->startState);
+  printf("State %d index is %d\n", dfa->states[0], getIndexOf(dfa->states[0], dfa->states, numberOfStates));
+  printf("Starting state: %d\n", dfa->startState);
   // set of indices of states
   Set *s = createSet();
   // add finals
@@ -249,8 +260,8 @@ DFA *minimizeDFA(const DFA *dfa)
     }
   }
   // finals done, go through all now
-  // printf("Initial set\n");
-  // setPrintAll(s);
+  printf("Initial set\n");
+  setPrintAll(s);
   bool changed = true;
   while (changed)
   {
@@ -294,7 +305,7 @@ DFA *minimizeDFA(const DFA *dfa)
       if (i != j && !setHas(s, i, j))
       {
         union_sets(i, j);
-        // printf("Union: %d %d\n", i, j);
+        printf("Union: %d %d\n", i, j);
         finalNumOfStates++;
       }
       // else if (i != j)
@@ -360,21 +371,21 @@ DFA *convertToDFA(int n)
   // Reverse the states
   // because the start state is actually the last in
   // the `states` array originally.
-  int *reversedStates = malloc(source_dfa->numberOfStates * sizeof(int));
+  union_state *reversedStates = malloc(source_dfa->numberOfStates * sizeof(union_state));
   for (int i = source_dfa->numberOfStates - 1; i >= 0; i--)
   {
     reversedStates[source_dfa->numberOfStates - i - 1] = source_dfa->states[i];
   }
   source_dfa->states = reversedStates;
-  // printf("DFA from NFA is:\n");
-  // debugPrintDFA(source_dfa);
-  DFA *dfa = minimizeDFA(source_dfa);
-  // printf("Minimized DFA is:\n");
-  // debugPrintDFA(dfa);
+  printf("DFA from NFA is:\n");
+  debugPrintDFA(source_dfa);
+  DFA *dfa = source_dfa; // minimizeDFA(source_dfa);
+  printf("Minimized DFA is:\n");
+  debugPrintDFA(dfa);
   return dfa;
 }
 
-int getIndexOf(int state, int *states, int numberOfStates)
+int getIndexOf(union_state state, union_state *states, int numberOfStates)
 {
   for (int i = 0; i < numberOfStates; i++)
   {
@@ -399,7 +410,7 @@ int **convertToArray(DFA *dfa)
     arr[i] = malloc(sizeof(int) * numberOfStates);
   }
   // printf("Size of array: %d\n", arraySize / sizeof(arr[0]));
-  int *states = dfa->states;
+  union_state *states = dfa->states;
   // memset(arr, 0, sizeof(int) * (numberOfStates * 2 + 1) * numberOfStates);
   memset(arr, 0, arraySize);
   // return arr;
@@ -423,8 +434,8 @@ int **convertToArray(DFA *dfa)
     Transition *head = dfa->transitionLists[input];
     while (head != NULL)
     {
-      int from = head->from;
-      int to = head->to;
+      union_state from = head->from;
+      union_state to = head->to;
       int fromIndex = getIndexOf(from, states, numberOfStates);
       int toIndex = getIndexOf(to, states, numberOfStates);
       // printf("Writing transition (%d, '%d')->%d\n", from, input, to);
@@ -436,12 +447,13 @@ int **convertToArray(DFA *dfa)
   return arr;
 }
 
-static int isFinalState(DFA *dfa, int state)
+static int isFinalState(DFA *dfa, union_state state)
 {
   for (int i = 0; i < dfa->numberOfFinalStates; i++)
   {
     if (dfa->finalStates[i] == state)
     {
+      printf("Checking final state\n");
       return 1;
     }
   }
@@ -450,12 +462,13 @@ static int isFinalState(DFA *dfa, int state)
 void printDFADirect(DFA *dfa, int n, FILE *fptr)
 {
   // return;
+  printf("====Printing DFA Direct====\n");
   int numberOfStates = dfa->numberOfStates;
   // print finals first
   // reverse(dfa->states, numberOfStates);
   for (int i = 0; i < numberOfStates; i++)
   {
-    int state = dfa->states[i];
+    union_state state = dfa->states[i];
     fprintf(fptr, "%d ", isFinalState(dfa, state));
   }
   fprintf(fptr, "\n");
@@ -464,9 +477,9 @@ void printDFADirect(DFA *dfa, int n, FILE *fptr)
   {
     for (int i = 0; i < numberOfStates; i++)
     {
-      int state = dfa->states[i];
+      union_state state = dfa->states[i];
       Transition *head = dfa->transitionLists[input];
-      int final = -1;
+      union_state final = 0;
       while (head != NULL)
       {
         if (head->from == state)
@@ -477,10 +490,16 @@ void printDFADirect(DFA *dfa, int n, FILE *fptr)
         head = head->next;
       }
       // printf("Found (%d, '%d')->%d\n", dfa->states[i], input, final);
-      final = getIndexOf(final, dfa->states, numberOfStates);
+      printf("Found (");
+      print_uint128_no_line(state);
+      printf(", '%d')->", input);
+      print_uint128(final);
+
+      int finalIndex = getIndexOf(final, dfa->states, numberOfStates);
+      printf("FoundIndex (%d, '%d')->%d\n", getIndexOf(state, dfa->states, numberOfStates), input, finalIndex);
       for (int i = 0; i < numberOfStates; i++)
       {
-        if (i == final)
+        if (i == finalIndex)
         {
           fprintf(fptr, "%d ", 1);
         }

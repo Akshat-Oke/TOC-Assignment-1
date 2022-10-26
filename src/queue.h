@@ -3,10 +3,11 @@
 
 #include <stdbool.h>
 #include "nfa.h"
+#include "uint128.h"
 
 typedef struct Node
 {
-  int data;
+  union_state data;
   struct Node *next;
 } Node;
 typedef struct Queue
@@ -16,8 +17,8 @@ typedef struct Queue
 } Queue;
 
 Queue *createQueue();
-void enqueue(Queue *queue, int e);
-int dequeue(Queue *q);
+void enqueue(Queue *queue, union_state e);
+union_state dequeue(Queue *q);
 void queueDestroy(Queue *queue);
 bool queueNotEmpty(Queue *queue);
 

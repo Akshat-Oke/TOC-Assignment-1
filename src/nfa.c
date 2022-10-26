@@ -112,7 +112,7 @@ int run_fork(int gridSize, char *source)
     }
     if (*shm)
     {
-      exit(1);
+      exit(0);
     }
     path[i * 2] = current + '0';
     path[i * 2 + 1] = ' ';
