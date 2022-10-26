@@ -367,6 +367,11 @@ DFA *minimizeDFA(const DFA *dfa)
 
 DFA *convertToDFA(int n)
 {
+  if (n > 10)
+  {
+    fprintf(stderr, "[Task 2 bounds error]\nCannot convert NFA(n=%d) to DFA: (n+1)^2 (i.e. %d) cannot be represented by 128-bit unsigned integer.\n", n, (n + 1) * (n + 1));
+    return NULL;
+  }
   DFA *source_dfa = justConvertNFAtoDFA(n);
   // Reverse the states
   // because the start state is actually the last in
