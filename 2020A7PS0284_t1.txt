@@ -1,33 +1,106 @@
 Exploring Path: 0 
-Exploring Path: 0 6 
-Exploring Path: 0 6 7 
-Exploring Path: 0 6 7 13 
-Exploring Path: 0 6 7 1 
-Exploring Path: 0 6 7 13 14 
-Exploring Path: 0 6 7 13 12 
-Exploring Path: 0 6 7 1 2 
-Exploring Path: 0 6 7 1 2 8 
-Exploring Path: 0 6 7 13 12 6 
-Exploring Path: 0 6 7 13 12 6 7 
-Failed at path: 0 6 7 13 12 6 7 
-Exploring Path: 0 6 7 13 12 18 
-Exploring Path: 0 6 7 13 12 18 19 
-Failed at path: 0 6 7 13 12 18 19 
-Exploring Path: 0 6 7 1 0 
-Exploring Path: 0 6 7 1 0 6 
-Exploring Path: 0 6 7 1 0 6 7 
-Failed at path: 0 6 7 1 0 6 7 
-Exploring Path: 0 6 7 13 14 20 
-Exploring Path: 0 6 7 13 14 8 
-Exploring Path: 0 6 7 1 2 8 9 
-Failed at path: 0 6 7 1 2 8 9 
-Exploring Path: 0 6 7 1 2 8 7 
-Failed at path: 0 6 7 1 2 8 7 
-Exploring Path: 0 6 7 13 14 8 9 
-Failed at path: 0 6 7 13 14 8 9 
-Exploring Path: 0 6 7 13 14 8 7 
-Failed at path: 0 6 7 13 14 8 7 
-Exploring Path: 0 6 7 13 14 20 19 
-Failed at path: 0 6 7 13 14 20 19 
-Exploring Path: 0 6 7 13 14 20 21 
-Failed at path: 0 6 7 13 14 20 21 
+Exploring Path: 0 5 
+Exploring Path: 0 5 6 
+Exploring Path: 0 5 6 1 
+Exploring Path: 0 5 6 1 2 
+Exploring Path: 0 5 6 11 
+Exploring Path: 0 5 6 11 10 
+Exploring Path: 0 5 6 11 10 11 
+Exploring Path: 0 5 6 1 2 3 
+Exploring Path: 0 5 6 1 2 3 8 
+Exploring Path: 0 5 6 1 0 
+Exploring Path: 0 5 6 1 0 1 
+Exploring Path: 0 5 6 1 0 1 6 
+Exploring Path: 0 5 6 11 10 11 16 
+Exploring Path: 0 5 6 11 10 11 16 21 
+Exploring Path: 0 5 6 11 10 11 16 21 20 
+Failed at path: 0 5 6 11 10 11 16 21 20 
+Exploring Path: 0 5 6 1 0 1 6 1 
+Exploring Path: 0 5 6 1 0 1 6 11 
+Exploring Path: 0 5 6 11 12 
+Exploring Path: 0 5 6 1 2 3 8 3 
+Exploring Path: 0 5 6 1 2 3 8 3 2 
+Failed at path: 0 5 6 1 2 3 8 3 2 
+Exploring Path: 0 5 6 1 2 3 8 3 4 
+Failed at path: 0 5 6 1 2 3 8 3 4 
+Exploring Path: 0 5 6 11 12 11 
+Exploring Path: 0 5 6 11 12 13 
+Exploring Path: 0 5 6 1 0 1 6 11 10 
+Failed at path: 0 5 6 1 0 1 6 11 10 
+Exploring Path: 0 5 6 1 0 1 6 11 12 
+Failed at path: 0 5 6 1 0 1 6 11 12 
+Exploring Path: 0 5 6 1 0 1 6 1 0 
+Failed at path: 0 5 6 1 0 1 6 1 0 
+Exploring Path: 0 5 6 1 0 1 6 1 2 
+Failed at path: 0 5 6 1 0 1 6 1 2 
+Exploring Path: 0 5 6 11 10 11 16 21 22 
+Failed at path: 0 5 6 11 10 11 16 21 22 
+Exploring Path: 0 5 6 1 2 3 8 13 
+Exploring Path: 0 5 6 11 10 11 6 
+Exploring Path: 0 5 6 11 10 11 16 11 
+Exploring Path: 0 5 6 1 2 1 
+Exploring Path: 0 5 6 1 2 1 6 
+Exploring Path: 0 5 6 11 10 11 6 1 
+Exploring Path: 0 5 6 1 2 1 6 1 
+Exploring Path: 0 5 6 11 12 11 6 
+Exploring Path: 0 5 6 11 12 13 8 
+Exploring Path: 0 5 6 11 12 13 18 
+Exploring Path: 0 5 6 1 2 3 8 13 12 
+Failed at path: 0 5 6 1 2 3 8 13 12 
+Exploring Path: 0 5 6 11 12 11 16 
+Exploring Path: 0 5 6 11 10 11 6 1 2 
+Failed at path: 0 5 6 11 10 11 6 1 2 
+Exploring Path: 0 5 6 11 10 11 6 1 0 
+Failed at path: 0 5 6 11 10 11 6 1 0 
+Exploring Path: 0 5 6 1 2 1 6 1 2 
+Failed at path: 0 5 6 1 2 1 6 1 2 
+Exploring Path: 0 5 6 1 2 1 6 1 0 
+Failed at path: 0 5 6 1 2 1 6 1 0 
+Exploring Path: 0 5 6 11 12 11 6 11 
+Exploring Path: 0 5 6 11 12 11 6 11 12 
+Failed at path: 0 5 6 11 12 11 6 11 12 
+Exploring Path: 0 5 6 11 12 11 6 1 
+Exploring Path: 0 5 6 11 12 11 6 1 2 
+Failed at path: 0 5 6 11 12 11 6 1 2 
+Exploring Path: 0 5 6 11 12 13 8 13 
+Exploring Path: 0 5 6 11 12 13 8 13 14 
+Failed at path: 0 5 6 11 12 13 8 13 14 
+Exploring Path: 0 5 6 11 12 11 6 11 10 
+Failed at path: 0 5 6 11 12 11 6 11 10 
+Exploring Path: 0 5 6 11 12 13 8 13 12 
+Failed at path: 0 5 6 11 12 13 8 13 12 
+Exploring Path: 0 5 6 11 12 11 6 1 0 
+Failed at path: 0 5 6 11 12 11 6 1 0 
+Exploring Path: 0 5 6 11 12 11 16 21 
+Exploring Path: 0 5 6 11 12 11 16 11 
+Exploring Path: 0 5 6 11 12 11 16 11 12 
+Failed at path: 0 5 6 11 12 11 16 11 12 
+Exploring Path: 0 5 6 11 12 11 16 21 22 
+Failed at path: 0 5 6 11 12 11 16 21 22 
+Exploring Path: 0 5 6 11 12 11 16 11 10 
+Failed at path: 0 5 6 11 12 11 16 11 10 
+Exploring Path: 0 5 6 11 12 11 16 21 20 
+Failed at path: 0 5 6 11 12 11 16 21 20 
+Exploring Path: 0 5 6 11 10 11 16 11 12 
+Failed at path: 0 5 6 11 10 11 16 11 12 
+Exploring Path: 0 5 6 11 10 11 16 11 10 
+Failed at path: 0 5 6 11 10 11 16 11 10 
+Exploring Path: 0 5 6 1 2 1 6 11 
+Exploring Path: 0 5 6 1 2 1 6 11 10 
+Failed at path: 0 5 6 1 2 1 6 11 10 
+Exploring Path: 0 5 6 11 12 13 8 3 
+Exploring Path: 0 5 6 1 2 3 8 13 14 
+Failed at path: 0 5 6 1 2 3 8 13 14 
+Exploring Path: 0 5 6 11 10 11 6 11 
+Exploring Path: 0 5 6 1 2 1 6 11 12 
+Failed at path: 0 5 6 1 2 1 6 11 12 
+Exploring Path: 0 5 6 11 12 13 18 23 
+Exploring Path: 0 5 6 11 12 13 18 13 
+Exploring Path: 0 5 6 11 10 11 6 11 12 
+Failed at path: 0 5 6 11 10 11 6 11 12 
+Exploring Path: 0 5 6 11 12 13 8 3 4 
+Failed at path: 0 5 6 11 12 13 8 3 4 
+Exploring Path: 0 5 6 11 12 13 8 3 2 
+Failed at path: 0 5 6 11 12 13 8 3 2 
+Exploring Path: 0 5 6 11 12 13 18 23 24 
+Accepted! Followed path: 0 5 6 11 12 13 18 23 24 

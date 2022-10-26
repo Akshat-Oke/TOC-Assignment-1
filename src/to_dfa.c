@@ -243,8 +243,8 @@ DFA *minimizeDFA(const DFA *dfa)
 {
   int numberOfStates = dfa->numberOfStates;
   // reverse(dfa->states, numberOfStates);
-  printf("State %d index is %d\n", dfa->states[0], getIndexOf(dfa->states[0], dfa->states, numberOfStates));
-  printf("Starting state: %d\n", dfa->startState);
+  // printf("State %d index is %d\n", dfa->states[0], getIndexOf(dfa->states[0], dfa->states, numberOfStates));
+  // printf("Starting state: %d\n", dfa->startState);
   // set of indices of states
   Set *s = createSet();
   // add finals
@@ -260,8 +260,8 @@ DFA *minimizeDFA(const DFA *dfa)
     }
   }
   // finals done, go through all now
-  printf("Initial set\n");
-  setPrintAll(s);
+  // printf("Initial set\n");
+  // setPrintAll(s);
   bool changed = true;
   while (changed)
   {
@@ -293,7 +293,7 @@ DFA *minimizeDFA(const DFA *dfa)
   }
   // we now have the set of distinguishable states
   // printf("Distinguishable states:\n");
-  setPrintAll(s);
+  // setPrintAll(s);
   // now we need to create a new DFA
   // create dsu
   init_dsu(dfa->numberOfStates);
@@ -305,7 +305,7 @@ DFA *minimizeDFA(const DFA *dfa)
       if (i != j && !setHas(s, i, j))
       {
         union_sets(i, j);
-        printf("Union: %d %d\n", i, j);
+        // printf("Union: %d %d\n", i, j);
         finalNumOfStates++;
       }
       // else if (i != j)
@@ -342,14 +342,14 @@ DFA *minimizeDFA(const DFA *dfa)
     Transition *temp = dfa->transitionLists[input];
     while (temp != NULL)
     {
-      int from = (temp->from);
-      int to = (temp->to);
-      from = getIndexOf(from, dfa->states, dfa->numberOfStates);
-      to = getIndexOf(to, dfa->states, dfa->numberOfStates);
-      from = find_set(from);
-      to = find_set(to);
+      union_state from = (temp->from);
+      union_state to = (temp->to);
+      int fromIndex = getIndexOf(from, dfa->states, dfa->numberOfStates);
+      int toIndex = getIndexOf(to, dfa->states, dfa->numberOfStates);
+      fromIndex = find_set(fromIndex);
+      toIndex = find_set(toIndex);
       // printf("Added transition from %d to %d on '%d'\n", from, to, input);
-      addTransition(newDFA, from, input, to);
+      addTransition(newDFA, fromIndex, input, toIndex);
       temp = temp->next;
     }
     // printTransitions(newDFA->transitionLists[input], input);
@@ -377,11 +377,11 @@ DFA *convertToDFA(int n)
     reversedStates[source_dfa->numberOfStates - i - 1] = source_dfa->states[i];
   }
   source_dfa->states = reversedStates;
-  printf("DFA from NFA is:\n");
-  debugPrintDFA(source_dfa);
-  DFA *dfa = source_dfa; // minimizeDFA(source_dfa);
-  printf("Minimized DFA is:\n");
-  debugPrintDFA(dfa);
+  // printf("DFA from NFA is:\n");
+  // debugPrintDFA(source_dfa);
+  DFA *dfa = minimizeDFA(source_dfa);
+  // printf("Minimized DFA is:\n");
+  // debugPrintDFA(dfa);
   return dfa;
 }
 
@@ -453,7 +453,6 @@ static int isFinalState(DFA *dfa, union_state state)
   {
     if (dfa->finalStates[i] == state)
     {
-      printf("Checking final state\n");
       return 1;
     }
   }
@@ -462,7 +461,6 @@ static int isFinalState(DFA *dfa, union_state state)
 void printDFADirect(DFA *dfa, int n, FILE *fptr)
 {
   // return;
-  printf("====Printing DFA Direct====\n");
   int numberOfStates = dfa->numberOfStates;
   // print finals first
   // reverse(dfa->states, numberOfStates);
@@ -489,14 +487,13 @@ void printDFADirect(DFA *dfa, int n, FILE *fptr)
         }
         head = head->next;
       }
-      // printf("Found (%d, '%d')->%d\n", dfa->states[i], input, final);
-      printf("Found (");
-      print_uint128_no_line(state);
-      printf(", '%d')->", input);
-      print_uint128(final);
+      // printf("Found (");
+      // print_uint128_no_line(state);
+      // printf(", '%d')->", input);
+      // print_uint128(final);
 
       int finalIndex = getIndexOf(final, dfa->states, numberOfStates);
-      printf("FoundIndex (%d, '%d')->%d\n", getIndexOf(state, dfa->states, numberOfStates), input, finalIndex);
+      // printf("FoundIndex (%d, '%d')->%d\n", getIndexOf(state, dfa->states, numberOfStates), input, finalIndex);
       for (int i = 0; i < numberOfStates; i++)
       {
         if (i == finalIndex)
